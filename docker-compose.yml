@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+    frontend:
+        container_name: feed-frontend
+        build: ./frontend
+        volumes:
+            - './frontend:/frontend'
+            - './frontend/node_modules:/frontend/node_modules'
+        ports:
+            - "3000:3000"
+    backend:
+        container_name: feed-backend
+        build: ./backend
+        volumes:
+            - './backend:/backend'
+        ports:
+            - "5000:5000"
+
+        
+
+
