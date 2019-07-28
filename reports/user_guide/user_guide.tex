@@ -1,0 +1,85 @@
+\documentclass{article}
+
+% Basic required LaTeX packages
+% \usepackage[english]{babel} 
+% \usepackage[utf8]{inputenc} 
+% \usepackage[T1]{fontenc}
+\renewcommand{\thesection}{\arabic{section}}
+\usepackage{import}
+\usepackage{analysis_orax}
+\graphicspath{ {./images/} }
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+% Packages which allow format customisation
+% \usepackage{titling}
+% \usepackage{cite}
+% \usepackage{caption}
+% \usepackage{textcomp}
+% \usepackage{xcolor}
+% \usepackage{etoolbox} 
+\usepackage{xcolor}
+
+% Packages which help display things like maths and images correctly
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setcounter{tocdepth}{3}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+\pagestyle{plain}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\definecolor{DarkBlue}{RGB}{36, 100, 176}
+\definecolor{MediumBlue}{RGB}{38, 119, 193}
+\setcounter{secnumdepth}{3}
+\usepackage{wrapfig}
+
+\usepackage{tocloft}
+ 
+\setlength\cftparskip{6.5pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\includegraphics[width=1.5cm]{logo.png}}
+\rfoot{ \thepage}
+
+\begin{document}
+
+\renewcommand*{\contentsname}{\color{DarkBlue}\Huge Contents}
+
+\title{\color{DarkBlue}\Huge SDP User Guide}
+\author{\color{MediumBlue}\Large Group 11 - FE.ED}
+\date{}
+
+\begin{titlepage}
+\maketitle
+\begin{figure}[h]
+    \centering
+    \includegraphics{logo.png}
+\end{figure}
+
+
+\end{titlepage}
+
+
+\tableofcontents
+% \listoffigures
+\pagebreak
+
+\import{sections/}{system_overview.tex}
+\import{sections/}{setup.tex}
+\import{sections/}{feeding.tex}
+\import{sections/}{troubleshooting.tex}
+\import{sections/}{references.tex}
+\end{document}

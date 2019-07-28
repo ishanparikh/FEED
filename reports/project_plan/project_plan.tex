@@ -1,0 +1,56 @@
+\documentclass[onecolumn]{IEEEtran}
+
+% Basic required LaTeX packages
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\renewcommand{\thesection}{\arabic{section}}
+\usepackage{import}
+
+
+% Packages which allow format customisation
+\usepackage{titling}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{etoolbox} 
+\patchcmd{\section}{\centering}{}{}{} % uses the etoolbox package to left align section headings
+
+% Packages which help display things like maths and images correctly
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+\pagestyle{plain}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+\usepackage{tocloft}
+ 
+\setlength\cftparskip{6.5pt}
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+% \setlength\cftbeforechapskip{0pt}
+
+
+% All your code should be in between the \begin{document} and \end{document} tags otherwise your compiler willl throw an error
+\begin{document}
+
+
+\title{SDP Project Plan}
+\author{Group 11 - FE.ED}
+\date{} % Leave blank to omit date. Comment out to include today's date or you can add a specific date
+
+\maketitle
+
+\tableofcontents
+
+\import{sections/}{goal_description.tex}
+\import{sections/}{resource_management.tex}
+\import{sections/}{team_planning.tex}
+\printbibliography
+\end{document}
