@@ -1,0 +1,7 @@
+kubectl --kubeconfig="../../.kube/feed-cluster-kubeconfig.yaml" exec feed-backend-7bb54f559f-tx8nn -- printenv
+kubectl get po --kubeconfig="../../.kube/feed-cluster-kubeconfig.yaml"
+kubectl get service --kubeconfig="../../.kube/feed-cluster-kubeconfig.yaml"
+kubectl get deployment --kubeconfig="../../.kube/feed-cluster-kubeconfig.yaml"
+
+kubectl create -f "~.yaml" --kubeconfig="../../.kube/feed-cluster-kubeconfig.yaml"
+kubectl logs podname -f --kubeconfig="../../.kube/feed-cluster-kubeconfig.yaml"

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: feed-backend
+    labels:
+        app: feed-backend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: feed-backend
+    template:
+        metadata:
+            labels:
+                app: feed-backend
+        spec:
+            containers:
+            - name: feed-backend
+              image: whadiyatalkinabeet/feed:backend
+              imagePullPolicy: Always
+              ports:
+              - containerPort: 5000
+            imagePullSecrets:
+            - name: myregistrykey

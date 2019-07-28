@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: backend-service
+    labels:
+        run: backend-service
+spec:
+    type: NodePort
+    ports:
+    - port: 8080
+      protocol: TCP
+    selector:
+      app: feed-backend
+----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: feed-backend
+    labels:
+        app: feed-backend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: feed-backend
+    template:
+        metadata:
+            labels:
+                app: feed-backend
+        spec:
+            containers:
+            - name: feed-backend
+              image: whadiyatalkinabeet/feed:backend
+              imagePullPolicy: Always
+              ports:
+              - containerPort: 8080
+            imagePullSecrets:
+            - name: regcred
