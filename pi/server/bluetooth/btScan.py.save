@@ -1,0 +1,28 @@
+import bluetooth
+import ..camera.camera
+from flask import Flask, render_template, Response, request, abort
+from ..camera.camera import VideoCamera
+import socket
+import requests
+import subprocess
+import ..arduino.read
+import time
+from flask_cors import CORS
+from crontab import CronTab
+
+def check_for_device():
+    return bluetooth.lookup_name("64:A2:F9:ED:DE:83") != None
+
+def gen(camera):
+    while True:
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+def video_feed():
+    return Response(gen(VideoCamera()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+if __name__ == '__main__':
+	if(check_for_devices == true):
+		video_feed()
