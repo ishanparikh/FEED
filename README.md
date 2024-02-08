@@ -4,9 +4,6 @@
 
 ### The easy way to feed your pets the right amount at the right time!
 
-## To Clone
-* Run `git clone https://github.com/nyalsadiq/Feed.git`
-
 ## To Build and Run
 * Install Docker and Docker Compose.
 * Navigate to the root directory of the project.
